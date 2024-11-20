@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { TableContainer } from '@mui/material';
+import DriverStandings from './DriverStandings';
+import RaceResults from './RaceResults';
+import ConstructorStandings from './ConstructorStandings';
+//wouldn't it be nice if there was a live timing endpoint?
+// import LiveTiming from './LiveTiming';
+
+function AppContainer({ children }) {
+  return <TableContainer>{children}</TableContainer>
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <RaceResults />
+      <DriverStandings />
+      <ConstructorStandings />
+      {/* <LiveTiming /> */}
+    </AppContainer>
   );
 }
 
