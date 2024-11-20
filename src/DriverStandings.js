@@ -29,8 +29,8 @@ function DriverStandings() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {driverStandings.map((driver) => (
-            <TableRow key={driver.driverId}>
+          {driverStandings.map((driver, driverId) => (
+            <TableRow key={driverId}>
               <TableCell>{driver.position}</TableCell>
               <TableCell>{driver.Driver.givenName} {driver.Driver.familyName}</TableCell>
               <TableCell>{driver.points}</TableCell>

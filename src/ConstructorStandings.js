@@ -29,8 +29,8 @@ function ConstructorStandings() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {constructorStandings.map((constructor) => (
-            <TableRow key={constructor}>
+          {constructorStandings.map((constructor, constructorId) => (
+            <TableRow key={constructorId}>
               <TableCell>{constructor.position}</TableCell>
               <TableCell>{constructor.Constructor.name}</TableCell>
               <TableCell>{constructor.points}</TableCell>

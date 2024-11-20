@@ -34,8 +34,8 @@ function RaceResults() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {raceResults.map((result) => (
-            <TableRow key={result.number}>
+          {raceResults.map((result, number) => (
+            <TableRow key={number}>
               <TableCell>{result.position}</TableCell>
               <TableCell>{result.Driver.givenName} {result.Driver.familyName}</TableCell>
               <TableCell>{result.Constructor.name}</TableCell>
