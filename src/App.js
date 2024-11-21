@@ -12,6 +12,9 @@ import { Grid, Card, CardContent, Typography } from '@mui/material';
 
 const darkTheme = createTheme({
   palette: {
+    text: {
+      primary: 'lightgray',
+    },
     type: 'dark',
     primary: {
       main: '#333',
@@ -21,7 +24,17 @@ const darkTheme = createTheme({
     },
     background: {
       default: '#444',
-      paper: 'lightgray',
+      paper: 'darkslategray',
+    },
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          color: 'lightgray',
+          boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.3)',
+        },
+      },
     },
   },
 });
@@ -29,8 +42,8 @@ const darkTheme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <div style={{ backgroundColor: 'teal', minHeight: '100vh', padding: 30 }}>
-        <AppBar position="static" sx={{ borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
+      <div style={{ backgroundColor: 'purple', padding: 30 }}>
+        <AppBar position="static" sx={{ borderTopLeftRadius: 6, borderTopRightRadius: 6}}>
           <Toolbar>
             <Typography variant="h4" textAlign="center">Formula 1 Standings and Results</Typography>
           </Toolbar>
