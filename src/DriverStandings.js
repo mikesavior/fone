@@ -43,7 +43,7 @@ function DriverStandings() {
       {/* <h1 style={{ textAlign: 'center' }}>Drivers' Standings</h1> */}
       <AppBar position="static" sx={{ borderRadius: 6, backgroundColor: 'slategray'}}>
         <Toolbar>
-          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Standings</Typography>
+          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Point Rankings</Typography>
         </Toolbar>
       </AppBar>
       <Table>
