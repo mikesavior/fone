@@ -1,6 +1,8 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import { alignProperty } from '@mui/material/styles/cssUtils';
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
+import Typography from '@mui/material/Typography';
 
 function ResultsContainer({ children }) {
   return(<TableContainer>{children}</TableContainer>);
@@ -22,7 +24,11 @@ function RaceResults() {
 
   return (
     <ResultsContainer>
-      <h1 style={{textAlign: 'center'}}>Last Race's Driver Standings ({raceVenue})</h1>
+      <AppBar position="static" sx={{ borderRadius: 6, backgroundColor: 'slategray'}}>
+        <Toolbar>
+          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Standings ({raceVenue})</Typography>
+        </Toolbar>
+      </AppBar>
       <Table>
         <TableHead>
           <TableRow>

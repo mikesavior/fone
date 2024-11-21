@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
+import Typography from '@mui/material/Typography';
 
 function DriverStandingsContainer({ children }) {
   return(<TableContainer>{children}</TableContainer>);
@@ -37,7 +40,12 @@ function DriverStandings() {
 
   return (
     <DriverStandingsContainer>
-      <h1 style={{ textAlign: 'center' }}>Drivers' Standings</h1>
+      {/* <h1 style={{ textAlign: 'center' }}>Drivers' Standings</h1> */}
+      <AppBar position="static" sx={{ borderRadius: 6, backgroundColor: 'slategray'}}>
+        <Toolbar>
+          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Standings</Typography>
+        </Toolbar>
+      </AppBar>
       <Table>
         <TableHead>
           <TableRow>

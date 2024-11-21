@@ -1,5 +1,9 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
+import Typography from '@mui/material/Typography';
+
 
 function StandingsContainer({ children }) {
   return(<TableContainer>{children}</TableContainer>);
@@ -19,7 +23,11 @@ function ConstructorStandings() {
 
   return (
     <StandingsContainer>
-      <h1 style={{textAlign: 'center'}}>Constructor's Standings</h1>
+      <AppBar position="static" sx={{ borderRadius: 6, backgroundColor: 'slategray'}}>
+      <Toolbar>
+          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Constructor's Standings</Typography>
+        </Toolbar>
+      </AppBar>
       <Table>
         <TableHead>
           <TableRow>
