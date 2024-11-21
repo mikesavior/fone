@@ -1,25 +1,39 @@
-import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-
-function StandingsContainer({ children }) {
-  return <TableContainer>{children}</TableContainer>
-}
+import React, { useState, useEffect } from 'react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@mui/material';
 
 function DriverStandings() {
-  const [driverStandings, setDriverStandings] = React.useState([]);
+  const [driverStandings, setDriverStandings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchDriverStandings = async () => {
-      const data = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
-      const jsonData = await data.json();
-      setDriverStandings(jsonData.MRData.StandingsTable.StandingsLists[0].DriverStandings);
+      setIsLoading(true);
+      setError(null);
+      try {
+        const data = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
+        const jsonData = await data.json();
+        setDriverStandings(jsonData.MRData.StandingsTable.StandingsLists[0].DriverStandings);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
     };
     fetchDriverStandings();
   }, []);
 
+  if (isLoading) {
+    return <CircularProgress />;
+  }
+
+  if (error) {
+    return <div>Error fetching data: {error}</div>;
+  }
+
   return (
-    <StandingsContainer>
-      <h1 style={{textAlign: 'center'}}>Drivers' Standings</h1>
+    <TableContainer>
+      <h1 style={{ textAlign: 'center' }}>Drivers' Standings</h1>
       <Table>
         <TableHead>
           <TableRow>
@@ -38,7 +52,7 @@ function DriverStandings() {
           ))}
         </TableBody>
       </Table>
-    </StandingsContainer>
+    </TableContainer>
   );
 }
 
