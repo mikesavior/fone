@@ -14,7 +14,6 @@ const darkTheme = createTheme({
   palette: {
     text: {
       primary: 'lightgray',
-
     },
     type: 'dark',
     primary: {
@@ -46,7 +45,7 @@ function App() {
       <div style={{ backgroundColor: 'purple', padding: 30 }}>
         <AppBar position="static" sx={{ borderTopLeftRadius: 6, borderTopRightRadius: 6}}>
           <Toolbar>
-            <Typography variant="h4" sx={{ color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Formula 1 Standings and Results</Typography>
+            <Typography variant="h4" sx={{ color: darkTheme.palette.text.primary, textAlign: 'center', flexGrow: 1 }}>Formula 1 Standings and Results</Typography>
           </Toolbar>
         </AppBar>
         <Grid container spacing={2}>
