@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 import { alignProperty } from '@mui/material/styles/cssUtils';
 
 function ResultsContainer({ children }) {
-  return <TableContainer>{children}</TableContainer>
+  return(<TableContainer>{children}</TableContainer>);
 }
 
 function RaceResults() {

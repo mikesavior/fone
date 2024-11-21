@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@mui/material';
 
+function DriverStandingsContainer({ children }) {
+  return(<TableContainer>{children}</TableContainer>);
+}
+
 function DriverStandings() {
   const [driverStandings, setDriverStandings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +36,7 @@ function DriverStandings() {
   }
 
   return (
-    <TableContainer>
+    <DriverStandingsContainer>
       <h1 style={{ textAlign: 'center' }}>Drivers' Standings</h1>
       <Table>
         <TableHead>
@@ -52,7 +56,7 @@ function DriverStandings() {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </DriverStandingsContainer>
   );
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 function StandingsContainer({ children }) {
-  return <TableContainer>{children}</TableContainer>
+  return(<TableContainer>{children}</TableContainer>);
 }
 
 function ConstructorStandings() {
