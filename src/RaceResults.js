@@ -26,10 +26,10 @@ function RaceResults() {
     <ResultsContainer>
       <AppBar position="static" sx={{ borderRadius: 2, backgroundColor: 'slategray'}}>
         <Toolbar>
-          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Last Race Results ({raceVenue})</Typography>
+          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Standings ({raceVenue})</Typography>
         </Toolbar>
       </AppBar>
-        <Table>
+        <Table table-layout="fixed">
           <TableHead>
             <TableRow>
               <TableCell>Position</TableCell>

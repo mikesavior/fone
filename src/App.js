@@ -5,7 +5,7 @@ import DriverStandings from './DriverStandings';
 import RaceResults from './RaceResults';
 import ConstructorStandings from './ConstructorStandings';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Grid2 as Grid, Card, CardContent, Typography } from '@mui/material';
+import { Grid2 as Grid, Card, CardContent, Typography, Divider } from '@mui/material';
 import { CssBaseline } from '@mui/material/';
 
 //wouldn't it be nice if there was a live timing endpoint?
@@ -50,29 +50,16 @@ function App() {
             <Typography variant="h4" sx={{ color: darkTheme.palette.text.primary, textAlign: 'center', flexGrow: 1 }}>Formula 1 Standings and Results</Typography>
           </Toolbar>
         </AppBar>
-        <Grid container spacing={2}>
-          <Grid item xs={15}>
-            <Card>
-              <CardContent>
-                <RaceResults />
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12}>
-            <Card>
-              <CardContent>
-                <DriverStandings />
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12}>
-            <Card>
-              <CardContent>
-                <ConstructorStandings />
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+        <Card sx={{ }}>
+          <CardContent>
+            <RaceResults />
+            <Divider />
+            <DriverStandings />
+            <Divider />
+            <ConstructorStandings />
+            <Divider />
+          </CardContent>
+        </Card>
       </div>
     </ThemeProvider>
   );
