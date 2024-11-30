@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress } from '@mui/material';
-import Toolbar from '@mui/material/Toolbar';
-import AppBar from '@mui/material/AppBar';
-import Typography from '@mui/material/Typography';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, CircularProgress, Collapse } from '@mui/material';
+import SectionHeader from './SectionHeader';
 
 function DriverStandingsContainer({ children }) {
   return(<TableContainer>{children}</TableContainer>);
@@ -12,6 +10,7 @@ function DriverStandings() {
   const [driverStandings, setDriverStandings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [open, setOpen] = useState(true);
 
   useEffect(() => {
     const fetchDriverStandings = async () => {
@@ -35,35 +34,34 @@ function DriverStandings() {
   }
 
   if (error) {
-    return <div>Error fetching data: {error}</div>;
+    return <div>Error fetching  {error}</div>;
   }
 
   return (
     <DriverStandingsContainer>
-      {/* <h1 style={{ textAlign: 'center' }}>Drivers' Standings</h1> */}
-      <AppBar position="static" sx={{ borderRadius: 2, backgroundColor: 'slategray'}}>
-        <Toolbar>
-          <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Point Rankings</Typography>
-        </Toolbar>
-      </AppBar>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Position</TableCell>
-            <TableCell>Driver</TableCell>
-            <TableCell>Points</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {driverStandings.map((driver, driverId) => (
-            <TableRow key={driverId}>
-              <TableCell>{driver.position}</TableCell>
-              <TableCell>{driver.Driver.givenName} {driver.Driver.familyName}</TableCell>
-              <TableCell>{driver.points}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      <SectionHeader title="Drivers' Point Rankings" onClick={() => setOpen(!open)} open={open} />
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Position</TableCell>
+                <TableCell>Driver</TableCell>
+                <TableCell>Points</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {driverStandings.map((driver, driverId) => (
+                <TableRow key={driverId}>
+                  <TableCell>{driver.position}</TableCell>
+                  <TableCell>{driver.Driver.givenName} {driver.Driver.familyName}</TableCell>
+                  <TableCell>{driver.points}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Collapse>
     </DriverStandingsContainer>
   );
 }
