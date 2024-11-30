@@ -26,7 +26,7 @@ function ConstructorStandings() {
       <AppBar position="static" sx={{ borderRadius: 2, backgroundColor: 'slategray'}}>
       <Toolbar>
           <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Constructor's Point Rankings</Typography>
-        </Toolbar>
+      </Toolbar>
       </AppBar>
       <Table>
         <TableHead>

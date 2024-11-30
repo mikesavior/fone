@@ -29,28 +29,28 @@ function RaceResults() {
           <Typography variant="h4" sx={{ backgroundColor: 'slategray', color: 'lightgray', textAlign: 'center', flexGrow: 1 }}>Drivers' Standings ({raceVenue})</Typography>
         </Toolbar>
       </AppBar>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Position</TableCell>
-            <TableCell>Driver</TableCell>
-            <TableCell>Constructor</TableCell>
-            <TableCell>Laps</TableCell>
-            <TableCell>Status</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {raceResults.map((result, number) => (
-            <TableRow key={number}>
-              <TableCell>{result.position}</TableCell>
-              <TableCell>{result.Driver.givenName} {result.Driver.familyName}</TableCell>
-              <TableCell>{result.Constructor.name}</TableCell>
-              <TableCell>{result.laps}</TableCell>
-              <TableCell>{result.status}</TableCell>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Position</TableCell>
+              <TableCell>Driver</TableCell>
+              <TableCell>Constructor</TableCell>
+              <TableCell>Laps</TableCell>
+              <TableCell>Status</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {raceResults.map((result, number) => (
+              <TableRow key={number}>
+                <TableCell>{result.position}</TableCell>
+                <TableCell>{result.Driver.givenName} {result.Driver.familyName}</TableCell>
+                <TableCell>{result.Constructor.name}</TableCell>
+                <TableCell>{result.laps}</TableCell>
+                <TableCell>{result.status}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
     </ResultsContainer>
   );
 }

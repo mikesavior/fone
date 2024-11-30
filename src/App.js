@@ -5,7 +5,9 @@ import DriverStandings from './DriverStandings';
 import RaceResults from './RaceResults';
 import ConstructorStandings from './ConstructorStandings';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Grid, Card, CardContent, Typography } from '@mui/material';
+import { Grid2 as Grid, Card, CardContent, Typography } from '@mui/material';
+import { CssBaseline } from '@mui/material/';
+
 //wouldn't it be nice if there was a live timing endpoint?
 // import LiveTiming from './LiveTiming';
 
@@ -41,6 +43,7 @@ const darkTheme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <div style={{ backgroundColor: 'purple', padding: 30 }}>
         <AppBar position="static" sx={{ borderTopLeftRadius: 6, borderTopRightRadius: 6}}>
           <Toolbar>
