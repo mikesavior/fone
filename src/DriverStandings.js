@@ -3,7 +3,6 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Circu
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 
 function DriverStandingsContainer({ children }) {
   return(<TableContainer>{children}</TableContainer>);
