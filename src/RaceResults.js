@@ -9,7 +9,7 @@ function ResultsContainer({ children }) {
 function RaceResults() {
   const [raceResults, setRaceResults] = useState([]);
   const [raceVenue, setRaceVenue] = useState('');
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchRaceResults = async () => {

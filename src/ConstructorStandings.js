@@ -8,7 +8,7 @@ function StandingsContainer({ children }) {
 
 function ConstructorStandings() {
   const [constructorStandings, setConstructorStandings] = useState([]);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchConstructorStandings = async () => {
