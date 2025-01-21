@@ -5,7 +5,6 @@ import ErrorBoundary from './ErrorBoundary';
 const DriverStandings = lazy(() => import('./DriverStandings'));
 const RaceResults = lazy(() => import('./RaceResults'));
 const ConstructorStandings = lazy(() => import('./ConstructorStandings'));
-const RaceSummary = lazy(() => import('./RaceSummary'));
 
 //wouldn't it be nice if there was a live timing endpoint?
 // import LiveTiming from './LiveTiming';
@@ -52,7 +51,6 @@ const App = memo(function App() {
         <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'darkslategray' }}>
           <ErrorBoundary>
             <Suspense fallback={<CircularProgress sx={{ margin: 'auto', padding: 2 }} />}>
-              <RaceSummary />
               <RaceResults />
               <DriverStandings />
               <ConstructorStandings />
