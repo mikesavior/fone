@@ -12,7 +12,7 @@ function ConstructorStandings() {
 
   useEffect(() => {
     const fetchConstructorStandings = async () => {
-      const data = await fetch('https://ergast.com/api/f1/current/constructorStandings.json');
+      const data = await fetch('https://api.jolpi.ca/ergast/current/constructorStandings.json');
       const jsonData = await data.json();
       setConstructorStandings(jsonData.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
     };

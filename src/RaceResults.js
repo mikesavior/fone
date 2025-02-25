@@ -13,7 +13,7 @@ function RaceResults() {
 
   useEffect(() => {
     const fetchRaceResults = async () => {
-      const data = await fetch('https://ergast.com/api/f1/current/last/results.json');
+      const data = await fetch('https://api.jolpi.ca/ergast/current/last/results.json');
       const jsonData = await data.json();
       setRaceResults(jsonData.MRData.RaceTable.Races[0].Results);
       setRaceVenue(jsonData.MRData.RaceTable.Races[0].raceName);
