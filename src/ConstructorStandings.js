@@ -21,7 +21,7 @@ function ConstructorStandings() {
 
   return (
     <StandingsContainer>
-      <SectionHeader title="Constructor's Point Rankings" onClick={() => setOpen(!open)} />
+      <SectionHeader title="Constructors' Point Rankings" onClick={() => setOpen(!open)} />
       <Collapse in={open} timeout="auto" unmountOnExit>
         <TableContainer>
           <Table>
