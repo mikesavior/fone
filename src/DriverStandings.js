@@ -17,7 +17,7 @@ function DriverStandings() {
       setIsLoading(true);
       setError(null);
       try {
-        const data = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
+        const data = await fetch('https://api.jolpi.ca/ergast/f1/2025/driverstandings');
         const jsonData = await data.json();
         setDriverStandings(jsonData.MRData.StandingsTable.StandingsLists[0].DriverStandings);
       } catch (error) {
